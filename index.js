@@ -12,7 +12,7 @@ const logMiddleware = (req, res, next) => {
   return next();
 };
 
-nunjucks.configure('views', {
+nunjucks.configure('views-njk', {
   autoescape: true,
   express: app,
   watch: true,
@@ -30,10 +30,17 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', logMiddleware, (req, res) => {
+const users = ['Danyllo', 'Valente', 'Silva'];
+
+app.get('/', logMiddleware, (req, res) =>
   // res.render('index', { isLogged: true, name: 'Diego' });
+
   // NJK
-  res.render('list', { isLogged: true, name: 'Diego' });
+  // res.render('list', { isLogged: true, name: 'Diego' });
+  res.render('list', { users }));
+
+app.get('/new', (req, res) => {
+  res.render('new');
 });
 
 app.post('/login', (req, res) => {
