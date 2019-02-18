@@ -1,0 +1,39 @@
+// inicia projeto
+yarn init
+
+// roda o projeto
+node index.js
+
+// adiciona o express no projeto
+yarn add express
+
+// adiciona o nodemom dependencia de desenvolvimento
+yarn add nodemom -D
+
+// adiciona no packge.json
+"scripts": {
+  "start": nodemom index.js
+}
+
+// executar com nodemom
+yarn start
+
+// configurando nunjucks [templates]
+yarn add nunjucks
+
+// editorconfig basta adicionar o arquivo .editorconfig
+
+// adicionar eslint
+yarn add eslint -D
+npx eslint --init
+// escolher popular > standard > Y [instalar dependencias]
+
+// remover arquivo package-lock.json
+// rodar comando "yarn"
+
+// configurar
+// ctrl + shift + P
+// digitar settings [escolher: open settings (JSON)]
+// adicionar:
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
